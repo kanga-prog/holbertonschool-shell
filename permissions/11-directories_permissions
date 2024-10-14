@@ -1,2 +1,2 @@
 #!/bin/bash
-fo
+chmod +x add_exec_to_dirs.sh
