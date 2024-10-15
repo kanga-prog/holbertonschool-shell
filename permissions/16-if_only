@@ -1,0 +1,2 @@
+#!/bin/bash
+CURRENT_OWNER=$(stat -c '%U' "$FILE")
