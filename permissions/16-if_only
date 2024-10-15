@@ -1,2 +1,13 @@
 #!/bin/bash
+FILE="hello"
 CURRENT_OWNER=$(stat -c '%U' "$FILE")
+if [ ! -f "$FILE" ]; then
+    echo "Le fichier '$FILE' n'existe pas."
+    exit 1
+fi
+if [ "$CURRENT_OWNER" == "guillaume" ]; then
+	sudo chown vincent "$FILE"
+    echo "Le propriétaire de '$FILE' a été changé en vincent."
+else
+    echo "Le propriétaire de '$FILE' n'est pas 'guillaume'. Le propriétaire actuel est '$CURRENT_OWNER'."
+fi
