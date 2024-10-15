@@ -1,17 +1,2 @@
 #!/bin/bash
-
-
-FILE="hello"
-
-
-if [ -e "$FILE" ]; then
-  CURRENT_OWNER=$(stat -c '%U' "$FILE")
-  if [ "$CURRENT_OWNER" == "guillaume" ]; then
-    sudo chown vincent "$FILE"
-    echo "Ownership of '$FILE' changed to 'vincent'."
-  else
-    echo "The file '$FILE' is not owned by 'guillaume' (current owner: '$CURRENT_OWNER')."
-  fi
-else
-  echo "The file '$FILE' does not exist."
-fi
+CURRENT_OWNER=$(stat -c '%U' "$FILE")
