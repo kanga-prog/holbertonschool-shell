@@ -1,2 +1,2 @@
 #!/bin/bash
-CURRENT_OWNER=$(stat -c '%U' "$FILE")
+chown --from=guillaume vincent hello
